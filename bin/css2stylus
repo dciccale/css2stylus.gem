@@ -1,0 +1,11 @@
+#!/usr/bin/env ruby
+require 'css2stylus'
+
+file = File.basename(ARGV[0])
+filename = File.basename(file, File.extname(file))
+css = File.read(file)
+
+converter = Css2Stylus::Converter.new(css)
+converter.process
+
+File.open(filename + '.styl', 'w') { |file| file.write(converter.get) }

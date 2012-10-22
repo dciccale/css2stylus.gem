@@ -1,4 +1,22 @@
-css2stylus
-==========
+# Css2Stylus
 
-Ruby gem that converts CSS to Stylus
+Ruby gem that converts CSS to Stylus.
+
+Based on css2less from Thomas Pierson.
+
+## Usage
+
+Install the gem:
+```bash
+$ gem install css2stylus
+```
+
+Convert any css file:
+```bash
+$ css2stylus myfile.css
+```
+
+The output will be saved to `myfile.styl`.
+
+## License
+See [LICENSE.txt](https://raw.github.com/dciccale/css2stylus/master/LICENSE.txt)
