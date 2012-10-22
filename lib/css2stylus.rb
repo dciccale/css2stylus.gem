@@ -55,7 +55,7 @@ module Css2Stylus
         @stylus = @stylus + ' ' * indent + element + "\n"
         style = children.delete(:style)
         if style
-          @stylus = @stylus + style.split(';').map { |s| s.strip }.reject { |s| s.empty? }.map { |s| ' ' * (indent + 2) + s.gsub(/:/, '') }.join("\n") + "\n"
+          @stylus = @stylus + style.split(';').map { |s| s.strip }.reject { |s| s.empty? }.map { |s| ' ' * (indent + 2) + s.gsub(/:(\s)*/, ' ') }.join("\n") + "\n"
         end
         render(children, indent + 2)
       end

@@ -1,6 +1,6 @@
-Gem::Specification.new do |s|
+Gem::Specification.new do |gem|
   gem.name        = 'css2stylus'
-  gem.version     = '0.0.1'
+  gem.version     = '0.0.3'
   gem.date        = Date.today.to_s
   gem.summary     = "CSS to Stylus converter"
   gem.description = "A ruby library to convert CSS into Stylus."
