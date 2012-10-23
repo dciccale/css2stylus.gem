@@ -9,11 +9,11 @@ module Css2Stylus
     end
 
     def process
+      @stylus = ''
       if @css.nil? || @css.empty?
-        return false
+        return @stylus
       end
       @tree = {}
-      @stylus = ''
       generate_tree
       render
       return true
@@ -37,7 +37,7 @@ module Css2Stylus
     end
 
     def generate_tree
-      @css.split("\n").map { |l| l.strip }.join.gsub(/\/\*+[^\*]*\*+\//, '').split(/[\{\}]/).each_slice(2) do |style|
+      @css.split("\n").map { |line| line.strip }.join.gsub(/\/\*+[^\*]*\*+\//, '').split(/[\{\}]/).each_slice(2) do |style|
         rules = style[0].strip
         if rules.include?(',')
           add_rule(@tree, [rules], style[1])
